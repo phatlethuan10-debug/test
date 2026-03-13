@@ -1,0 +1,85 @@
+<style>
+    /* GIỮ NGUYÊN TOÀN BỘ CODE TRƯỚC ĐÓ, CHỈ THAY THẾ/SỬA CÁC ĐOẠN SAU */
+
+    /* Sửa lại khung chứa chính để không bị bóp quá hẹp trên điện thoại */
+    .content-card-wrapper {
+        background: rgba(255, 255, 255, 0.98); 
+        padding: 25px 15px; /* Giảm padding một chút để tăng không gian nội dung */
+        border-radius: 45px;
+        border: 10px double #6f4e37; 
+        width: 95%; 
+        max-width: 900px; 
+        margin-bottom: 60px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
+        animation: slideUp 0.8s ease-out; 
+        position: relative; 
+        z-index: 10;
+    }
+
+    /* Đảm bảo hàng luôn nằm ngang, không bị nhảy dòng */
+    .step-row { 
+        display: flex; 
+        align-items: center; 
+        width: 100%; 
+        gap: 10px; /* Giảm gap để vừa màn hình nhỏ */
+        cursor: pointer; 
+        flex-wrap: nowrap; /* Tuyệt đối không cho phép xuống dòng */
+    }
+
+    /* Sửa lại box chứa nội dung để co giãn linh hoạt */
+    .process-step {
+        flex: 1; 
+        display: flex; 
+        align-items: center; 
+        background: #fff; 
+        padding: 10px 15px; /* Điều chỉnh padding cho gọn */
+        border-radius: 20px; /* Bo góc nhẹ hơn cho giống hình 2 */
+        border: 3px solid #6f4e37; /* Độ dày viền vừa phải */
+        box-shadow: 4px 4px 0px #d7ccc8;
+        gap: 15px; 
+        transition: 0.4s;
+        min-width: 0; /* Quan trọng để text bên trong không đẩy khung ra ngoài */
+    }
+
+    /* Giữ ảnh cố định kích thước và không bị méo */
+    .qr-box { 
+        flex: 0 0 70px; /* Thu nhỏ size ảnh một chút để cân đối trên mobile */
+        height: 70px; 
+        border-radius: 12px; 
+        overflow: hidden; 
+        border: 2px solid #6f4e37; 
+    }
+
+    /* Xử lý phần chữ để không bị tràn */
+    .video-text {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+    }
+    .video-text h3 { 
+        margin: 0; 
+        font-size: clamp(0.9rem, 4vw, 1.2rem); /* Font chữ tự co giãn */
+        color: #6f4e37; 
+        text-transform: uppercase; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+    .video-text p { 
+        margin: 2px 0 0; 
+        font-size: clamp(0.7rem, 3vw, 0.9rem); 
+        color: #e67e22; 
+        font-weight: bold; 
+    }
+
+    /* Icon bên ngoài khung */
+    .side-icon { 
+        flex: 0 0 50px; 
+        font-size: 2.5rem; 
+        text-align: center; 
+    }
+
+    /* Reset lại phần chẵn lẻ để luôn đồng nhất như Hình 2 nếu bạn muốn */
+    .step-row.even { flex-direction: row; } /* Nếu muốn tất cả icon nằm bên phải như hình 2 thì bỏ row-reverse */
+
+</style>
